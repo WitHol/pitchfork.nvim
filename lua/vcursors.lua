@@ -1,6 +1,6 @@
 local M = require("module")
 
--- Table of vcurosrs. Do not modify them directly, unless you know, what you're doing
+-- Table of vcurosrs. Do not modify them directly, unless you know what you're doing
 M.vcursors = {{
   line = vim.fn.line('.'),
   col = vim.fn.col('.'),
@@ -8,7 +8,7 @@ M.vcursors = {{
 }}
 M.current_index = 1
 
-M.new_vcursor = function()
+M.duplicate_current = function()
   local new_vcursor_index = table.maxn(M.vcursors) + 1
   table.insert(M.vcursors, new_vcursor_index, {
     line = vim.fn.line('.'),

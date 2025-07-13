@@ -3,7 +3,7 @@ M.config = {
   window_width = 60,
   window_height = 8,
 
-  new_vcursor_keymap = "<leader>pn",
+  duplicate_current_keymap = "<leader>pn",
   toggle_window_keymap = "<leader>pw",
 
   remove_cursor_in_window_keymap = "d",
@@ -16,7 +16,7 @@ require("window")
 ---@param opts table
 M.setup = function(opts)
   M.config = vim.tbl_deep_extend('keep', M.config, opts)
-  vim.keymap.set('n', M.config.new_vcursor_keymap, M.new_vcursor)
+  vim.keymap.set('n', M.config.duplicate_current_keymap, M.duplicate_current)
   vim.keymap.set('n', M.config.toggle_window_keymap, M.toggle_window)
   vim.keymap.set('n', "pl", function() vim.print(M) end)
 

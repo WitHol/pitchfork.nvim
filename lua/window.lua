@@ -42,7 +42,7 @@ M.open_window = function()
 
   vim.keymap.set('n', M.config.remove_cursor_in_window_keymap, function()
       M.remove_vcursor(vim.fn.line('.'))
-      M.close_window()
+      M.refresh_window()
     end,
     { silent = true, noremap = true, buffer = buf }
   )
@@ -55,3 +55,9 @@ M.close_window = function()
   vim.api.nvim_win_close(win, true)
   win = nil
 end
+
+M.refresh_window = function()
+  M.close_window()
+  M.open_window()
+end
+
